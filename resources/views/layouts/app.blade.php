@@ -13,7 +13,7 @@
 <body class="bg-brownish min-h-full">
     {{-- Header Section --}}
     <header>
-        <nav class="container flex items-center py-4 mt-5 sm:mt-1 bg-white rounded-xl text-yellow-800 shadow-md fixed inset-x-0 mx-auto">
+        <nav class="container flex items-center py-4 mt-5 sm:mt-1 bg-white rounded-xl text-yellow-800 shadow-md fixed inset-x-0 mx-auto z-10">
             <div class="capitalize flex-1 font-dancing text-3xl font-bold">
                <a href="{{route('home')}}"> <h1>braids by aggie</h1> </a>
             </div>
@@ -50,7 +50,7 @@
     </header>
 
     {{-- Content --}}
-    <div class="pt-24">
+    <div class="py-24">
         {{ $slot }}
     </div>
     {{-- Content Ends --}}

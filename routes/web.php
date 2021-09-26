@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Livewire\EditHome;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\HomePage;
-
+use App\Http\Livewire\StyleList;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,5 @@ use App\Http\Livewire\HomePage;
 |
 */
 Route::get('/',HomePage::class)->name('home');
+Route::get('/edit-home',EditHome::class)->name('edit.home');
+Route::get('/style-list',StyleList::class)->name('style.list');
