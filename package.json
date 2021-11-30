@@ -16,6 +16,7 @@
         "postcss": "^8.1.14"
     },
     "dependencies": {
+        "alpinejs": "^3.5.2",
         "autoprefixer": "^10.3.4",
         "tailwindcss": "^2.2.14"
     }
