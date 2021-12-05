@@ -18,7 +18,7 @@ class CreateStylesTable extends Migration
             $table->string('name');
             $table->float('price');
             $table->longText('info');
-            $table->string('image')->nullable();
+            $table->longText('stylePicture')->nullable();
             $table->timestamps();
         });
     }

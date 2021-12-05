@@ -4,18 +4,20 @@ namespace App\Http\Livewire\Setting;
 
 use App\Models\Style;
 use Livewire\Component;
+use Intervention\Image\Facades\Image;
 use Livewire\WithFileUploads;
 
 class Styles extends Component
 {
     use WithFileUploads;
     public Style $style;
-    public $mediaComponentNames = ['style.image'];
+    public $styleImage;
+    
     protected $rules = [
         'style.name'=> 'required',
         'style.price'=> 'required',
         'style.info'=> 'required',
-        'style.image'=> 'nullable|image',
+        // 'style.stylePicture'=> 'nullable',
     ];
     public function mount()
     {
@@ -23,12 +25,14 @@ class Styles extends Component
     }
     public function addStyle()
     {
-        $this->validate();
+        ini_set('memory_limit','256M'); 
+        $this->style->stylePicture = Image::make($this->styleImage)->encode('data-url');
+        // dd($img);
+
+
         $this->style->save();
         $this->style = new Style();        
 
-
-        // dd('Hit');
     }
     public function render()
     {

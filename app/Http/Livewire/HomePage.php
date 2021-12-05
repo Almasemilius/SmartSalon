@@ -10,7 +10,7 @@ class HomePage extends Component
     public $welcome;
     public function render()
     {
-        $this->welcome = General::first()->message;
+        $this->welcome = General::first();
 
         return view('livewire.home-page');
     }

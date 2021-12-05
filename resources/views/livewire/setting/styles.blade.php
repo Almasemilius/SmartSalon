@@ -60,6 +60,7 @@
                                                 d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
                                         </svg>
                                         <span class="mt-2 text-base leading-normal">Select a file</span>
+                                        <input wire:model="styleImage" type="file" class="hidden">
                                     </label>
                                 </div>
                             </div>
@@ -79,11 +80,11 @@
                         </h6>
                         <div class="h-44 overflow-y-scroll mb-4">
                             @foreach ($styles as $style)
-                            <div class="">
+                            <div class="py-3">
                                 <div
                                     class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4">
                                     <div class="col-span-2 sm:col-span-1 xl:col-span-1">
-                                        <img alt="..." src="https://source.unsplash.com/gUBJ9vSlky0"
+                                        <img alt="..." src="{{$style->stylePicture}}"
                                             class="h-24 w-24 rounded  mx-auto" />
                                     </div>
                                     <div class="col-span-2 sm:col-span-4 xl:col-span-4">
