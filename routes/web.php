@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\TestingController;
+use App\Http\Livewire\Booking;
+use App\Http\Livewire\ContactsPage;
 use App\Http\Livewire\EditHome;
 use App\Http\Livewire\HomePage;
 use App\Http\Livewire\Setting\GeneralSetting;
@@ -27,3 +29,5 @@ Route::get('/edit-general',GeneralSetting::class)->name('edit.general');
 Route::get('/edit-services',OurServices::class)->name('edit.services');
 Route::get('/style-list',StyleList::class)->name('style.list');
 Route::get('/imageTest',[TestingController::class,'imageTest']);
+Route::get('/booking',[Booking::class,'booking']);
+Route::get('/contact-us',[ContactsPage::class,'contact.us']);
