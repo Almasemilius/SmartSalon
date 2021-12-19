@@ -12,6 +12,6 @@ class HomePage extends Component
     {
         $this->welcome = General::first();
 
-        return view('livewire.home-page');
+        return view('livewire.home-page')->layout('layouts.default');
     }
 }

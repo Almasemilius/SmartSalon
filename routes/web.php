@@ -24,10 +24,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',HomePage::class)->name('home');
-Route::get('/edit-styles',Styles::class)->name('edit.styles');
-Route::get('/edit-general',GeneralSetting::class)->name('edit.general');
-Route::get('/edit-services',OurServices::class)->name('edit.services');
 Route::get('/style-list',StyleList::class)->name('style.list');
 Route::get('/imageTest',[TestingController::class,'imageTest']);
-Route::get('/booking',[Booking::class,'booking']);
-Route::get('/contact-us',[ContactsPage::class,'contact.us']);
+Route::get('/booking',Booking::class)->name('booking');
+Route::get('/contact-us',ContactsPage::class)->name('contact.us');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/edit-styles',Styles::class)->name('edit.styles');
+    Route::get('/edit-general',GeneralSetting::class)->name('edit.general');
+    Route::get('/edit-services',OurServices::class)->name('edit.services');
+});

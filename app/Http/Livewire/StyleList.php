@@ -8,6 +8,6 @@ class StyleList extends Component
 {
     public function render()
     {
-        return view('livewire.style-list');
+        return view('livewire.style-list')->layout('layouts.default');
     }
 }

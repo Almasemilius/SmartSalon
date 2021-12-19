@@ -25,6 +25,6 @@ class ContactsPage extends Component
     }
     public function render()
     {
-        return view('livewire.contacts-page');
+        return view('livewire.contacts-page')->layout('layouts.default');
     }
 }
