@@ -1,7 +1,7 @@
 <div class="flex">
     @include('layouts.sidebar')
     <!-- component -->
-    <div class="z-0 bg-brownish w-5/6">
+    <div class="z-0 bg-brownish w-full md:w-5/6">
         <div class="w-full lg:w-10/12 px-4 mx-auto">
             <div
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-0">
@@ -47,8 +47,9 @@
                                         class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"></textarea>
                                 </div>
                             </div>
-                            <div class="w-6/12 px-4">
-                                <div class="relative w-full mb-3">
+                           <div class="flex">
+                                <div class="lg:w-6/12 px-4">
+                                <div class="relamb-3">
                                     <label class="block capitalize text-xs font-bold mb-2" for="">
                                         Image
                                     </label>
@@ -64,12 +65,13 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="w-6/12 px-4">
+                            <div class="lg:w-6/12 px-4">
                                 <label for="">&nbsp</label>
                                 <div class="relative mb-3  text-center">
                                     <button wire:click.prevent="addStyle" class="w-64 shadow-lg bg-brownish rounded-md px-4 py-6">Add Style</button>
                                 </div>
                             </div>
+                           </div>
                         </div>
                         {{-- Our Services Ends --}}
                         <hr class=" mt-6 border-b-1">

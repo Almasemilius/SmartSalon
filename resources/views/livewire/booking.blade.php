@@ -49,7 +49,7 @@
 
   <div class="h-1/5">
     <div class="w-full flex justify-center" wire:ignore>
-      <div class="w-5/6 bg-gray-100 p-4 shadow-md" id='calendar'></div>
+      <div class="w-5/6 bg-gray-100 p-4 shadow-md" id='calendar' style="height: 50vh;"></div>
     </div>
   </div>
 
@@ -63,7 +63,7 @@
         var data = @this.bookings;
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          // events: JSON.parse(data),
+          events: JSON.parse(data),
           events: [
                         {
                             title: 'Conference',

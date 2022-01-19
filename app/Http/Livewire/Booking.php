@@ -50,8 +50,8 @@ class Booking extends Component
 
     public function addbooking($booking)
     {
-        $input['style'] = $booking['style'];
-        $input['book_time'] = $booking['book_time'];
+        $input['style_id'] = $booking['style_id'];
+        $input['book_day'] = $booking['book_day'];
         Book::create($input);
     }
     /**
@@ -78,7 +78,12 @@ class Booking extends Component
         }
         $this->styles = Style::all();
 
-        $bookings = Book::select('id', 'style', 'book_time')->get();
+        $bookings = Book::select('id', 'style_id', 'booking_day')->get();
+        $bookings->map(function($booking) {[
+            "title" => $booking->style_id,
+            "start" => $booking->booking_day,
+            "end" => '2022-01-12T12:30:00',
+        ];});
         $this->bookings = json_encode($bookings);
         return view('livewire.booking')->layout('layouts.default');
     }

@@ -9,4 +9,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Style extends Model  
 {
     use HasFactory;
+    protected $guarded = [];
+
+ 
 }

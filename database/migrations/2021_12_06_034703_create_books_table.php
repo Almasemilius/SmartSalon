@@ -15,11 +15,11 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->string('book_date')->nullable();
-            $table->string('book_time')->nullable();
-            $table->string('style')->nullable();
+            $table->string('name');
+            $table->string('phone_number');
+            $table->timestamp('booking_day');
+            $table->unsignedBigInteger('style_id');
+            $table->foreign('style_id')->references('id')->on('styles');
             $table->timestamps();
         });
     }

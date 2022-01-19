@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class PendingBooking extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+  
+    public function style()
+    {
+        return $this->belongsTo(Style::class);
+    }
 }

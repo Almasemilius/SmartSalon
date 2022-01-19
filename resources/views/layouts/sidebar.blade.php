@@ -1,7 +1,7 @@
-<div class="bg-brownish w-1/6 border">
+<div class="bg-brownish w-1/6 border hidden md:block">
     <div class="w-full bg-white rounded h-full">
         <div class="flex items-center space-x-4 p-2 mb-5 justify-center">
-            <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">James Bhatta</h4>
+            <h4 class="font-semibold text-lg text-gray-700 capitalize font-poppins tracking-wide">{{Auth::user()->name }}</h4>
         </div>
         <ul class="space-y-2 text-sm">
             <li>
@@ -32,6 +32,16 @@
                         </svg>
                     </span>
                     <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{route('pending.bookings')}}" class="@if(Route::is('pending.bookings')) bg-gray-200 @endif flex items-center space-x-3 text-gray-700 p-2 rounded-md font-medium hover:bg-gray-50  focus:shadow-outline">
+                    <span class="text-gray-600">
+                        <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                        </svg>
+                    </span>
+                    <span>Pending Bookings</span>
                 </a>
             </li>
         </ul>
