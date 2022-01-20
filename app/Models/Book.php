@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+    public function style()
+    {
+        return $this->belongsTo(Style::class);
+
+    }
 }

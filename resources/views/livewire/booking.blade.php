@@ -29,11 +29,11 @@
               <option value="{{$style->id}}">{{$style->name}}</option>
               @endforeach
             </select>
-            
+
           </div>
           <div class="w-full sm:w-1/2 pl-2">
             <label for="Price">Price</label>
-            <input wire:model="stylePrice" type="text" name="phone_number" class="input w-full" id="phone_number" autocomplete="off"  disabled>
+            <input wire:model="stylePrice" type="text" name="phone_number" class="input w-full" id="phone_number" autocomplete="off" disabled>
           </div>
         </div>
         <hr />
@@ -61,20 +61,22 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var data = @this.bookings;
-        console.log(data);
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
           events: JSON.parse(data),
-          
+
           initialView: 'timeGridWeek',
           headerToolbar: {
             left: 'prev,next today',
             center: 'title',
             right: 'timeGridWeek,timeGridDay'
           },
+
+
           dateClick(info) {
-                var date = new Date(info.dateStr);
-            // console.log(date)
+            var now = new Date();
+            if (info.date < now)
+              return false;
             const event = new CustomEvent('openmodal', {
               detail: info,
               bubbles: true,
@@ -85,7 +87,7 @@
             //   console.log(info)
             // })
             window.dispatchEvent(event);
-            
+
 
 
 

@@ -81,9 +81,9 @@ class Booking extends Component
         $bookings = Book::select('id', 'style_id', 'booking_day')->get();
         $bookingInfo = $bookings->map(function ($booking) {
 
-            $booking["title"] = $booking->style_id;
+            $booking["title"] = $booking->style->name;
             $booking["start"] = $booking->booking_day;
-            $booking["end"] = "2022-01-04T12:30:00";
+            $booking["end"] =  date('Y-m-d H:i:s',strtotime('+3 hour',strtotime($booking->booking_day)));;
             return $booking;
         });
         $this->bookings = json_encode($bookingInfo);

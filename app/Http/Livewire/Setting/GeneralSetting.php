@@ -11,6 +11,10 @@ class GeneralSetting extends Component
     protected $rules = [
         'general.name' => 'required',
         'general.message' => 'required',
+        'general.phone_number' => 'required',
+        'general.facebook' => 'nullable',
+        'general.twitter' => 'nullable',
+        'general.instagram' => 'nullable',
     ];
     public function mount()
     {

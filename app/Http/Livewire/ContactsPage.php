@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Feedback;
+use App\Models\General;
 use Livewire\Component;
 
 class ContactsPage extends Component
@@ -25,6 +26,7 @@ class ContactsPage extends Component
     }
     public function render()
     {
-        return view('livewire.contacts-page')->layout('layouts.default');
+        $contacts = General::first();
+        return view('livewire.contacts-page',compact('contacts'))->layout('layouts.default');
     }
 }

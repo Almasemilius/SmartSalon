@@ -17,6 +17,10 @@ class CreateGeneralsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('message');
+            $table->string('phone_number');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('instagram');
             $table->timestamps();
         });
     }
