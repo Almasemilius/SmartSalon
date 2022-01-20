@@ -61,22 +61,11 @@
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var data = @this.bookings;
+        console.log(data);
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
           events: JSON.parse(data),
-          events: [
-                        {
-                            title: 'Conference',
-                            start: '2021-11-11',
-                            end: '2021-11-13'
-                        },
-                        {
-                            title: 'Meeting',
-                            start: '2021-11-12T10:30:00',
-                            end: '2021-11-12T12:30:00'
-                        },
-                       
-                    ],
+          
           initialView: 'timeGridWeek',
           headerToolbar: {
             left: 'prev,next today',

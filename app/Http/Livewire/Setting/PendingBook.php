@@ -27,20 +27,17 @@ class PendingBook extends Component
         $this->confirmedBooking->save();
 
         $this->deletePendingRequest($booking);
-
-        
-        
         
     }
 
-    public function deletePendingRequest($booking)
+    public function deletePendingRequest(PendingBooking $booking)
     {
         $booking->delete();
         
     }
     public function render()
     {
-        $pendingBookings = PendingBooking::all();
+        $pendingBookings = PendingBooking::paginate(10);
        
         return view('livewire.setting.pending-book',compact('pendingBookings'));
     }

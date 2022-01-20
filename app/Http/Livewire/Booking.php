@@ -42,7 +42,7 @@ class Booking extends Component
         $this->pendingBooking->name = $this->name;
         $this->pendingBooking->phone_number = $this->phoneNumber;
         $this->pendingBooking->save();
-        
+
         $this->pendingBooking = new PendingBooking();
 
         // dd($this->pendingBooking);
@@ -79,12 +79,14 @@ class Booking extends Component
         $this->styles = Style::all();
 
         $bookings = Book::select('id', 'style_id', 'booking_day')->get();
-        $bookings->map(function($booking) {[
-            "title" => $booking->style_id,
-            "start" => $booking->booking_day,
-            "end" => '2022-01-12T12:30:00',
-        ];});
-        $this->bookings = json_encode($bookings);
+        $bookingInfo = $bookings->map(function ($booking) {
+
+            $booking["title"] = $booking->style_id;
+            $booking["start"] = $booking->booking_day;
+            $booking["end"] = "2022-01-04T12:30:00";
+            return $booking;
+        });
+        $this->bookings = json_encode($bookingInfo);
         return view('livewire.booking')->layout('layouts.default');
     }
 }
