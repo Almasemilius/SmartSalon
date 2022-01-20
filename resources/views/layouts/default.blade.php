@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     @livewireStyles
 
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </head>
 
 <body class="bg-brownish  min-h-full">

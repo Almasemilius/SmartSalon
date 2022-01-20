@@ -2208,6 +2208,10 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(29, 78, 216, var(--tw-text-opacity));
 }
+.text-brownish {
+	--tw-text-opacity: 1;
+	color: rgba(252, 238, 229, var(--tw-text-opacity));
+}
 .underline {
 	text-decoration: underline;
 }

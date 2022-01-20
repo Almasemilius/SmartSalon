@@ -3,15 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\General;
+use App\Models\Style;
 use Livewire\Component;
 
 class HomePage extends Component
 {
-    public $welcome;
     public function render()
     {
-        $this->welcome = General::first();
-
-        return view('livewire.home-page')->layout('layouts.default');
+        $styles = Style::all();
+        return view('livewire.home-page',compact('styles'))->layout('layouts.default');
     }
 }

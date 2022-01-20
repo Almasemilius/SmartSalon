@@ -82,33 +82,8 @@
               bubbles: true,
             })
 
-
-            // document.addEventListener('openModal',function() {
-            //   console.log(info)
-            // })
             window.dispatchEvent(event);
 
-
-
-
-            // document.getElementById('')
-            //     var title = prompt('Enter Event Title');
-            //     if (title != null && title != '') {
-            //         calendar.addEvent({
-            //             title: title,
-            //             start: date,
-            //             allDay: false
-            //         });
-            //         var eventAdd = {
-            //             title: title,
-            //             start: date
-            //         };
-            //         // @this.addevent(eventAdd);
-            //         alert('Great. Now, update your database...');
-            //         alert(info.dateStr);
-            //     } else {
-            //         alert('Event Title Is Required');
-            //     }
           },
         });
 
