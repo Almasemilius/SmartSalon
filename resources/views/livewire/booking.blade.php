@@ -49,7 +49,7 @@
 
   <div class="h-1/5">
     <div class="w-full flex justify-center" wire:ignore>
-      <div class="w-5/6 bg-gray-100 p-4 shadow-md" id='calendar' style="height: 50vh;"></div>
+      <div class="w-5/6 bg-gray-100 p-4 shadow-md" id='calendar'></div>
     </div>
   </div>
 
@@ -65,7 +65,12 @@
         var calendar = new FullCalendar.Calendar(calendarEl, {
           events: JSON.parse(data),
 
+          height: "auto",
+
           initialView: 'timeGridWeek',
+          slotDuration: '01:00',
+          slotMinTime: '08:00', 
+          slotMaxTime: '18:00',
           headerToolbar: {
             left: 'prev,next today',
             center: 'title',

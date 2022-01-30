@@ -23,6 +23,7 @@
                     <h1>braids by aggie</h1>
                 </a>
             </div>
+            <!-- App Drawer -->
             <div x-show="drawer" class="fixed inset-0 flex z-40 lg:hidden" x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state." x-ref="dialog" aria-modal="true" style="display: none;">
 
                 <div x-show="drawer" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state." class="fixed inset-0 bg-gray-600 bg-opacity-75" @click="drawer = false" aria-hidden="true" style="display: none;">
@@ -141,7 +142,7 @@
                     </div>
                 </a>
 
-                <a href="{{route('login')}}" class="flex cursor-pointer mr-5">
+                <a href="@if(!auth()->user()) {{route('login')}} @else {{route('edit.general')}} @endif" class="flex cursor-pointer mr-5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>

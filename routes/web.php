@@ -3,11 +3,11 @@
 use App\Http\Controllers\TestingController;
 use App\Http\Livewire\Booking;
 use App\Http\Livewire\ContactsPage;
-use App\Http\Livewire\EditHome;
 use App\Http\Livewire\HomePage;
 use App\Http\Livewire\Setting\GeneralSetting;
 use App\Http\Livewire\Setting\OurServices;
 use App\Http\Livewire\Setting\PendingBook;
+use App\Http\Livewire\Setting\Feedback;
 use App\Http\Livewire\Setting\Styles;
 use App\Http\Livewire\StyleList;
 use App\Providers\RouteServiceProvider;
@@ -38,4 +38,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/edit-general',GeneralSetting::class)->name('edit.general');
     Route::get('/edit-services',OurServices::class)->name('edit.services');
     Route::get('/pending-bookings',PendingBook::class)->name('pending.bookings');
+    Route::get('/feedback',Feedback::class)->name('feedback');
 });
