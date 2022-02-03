@@ -42,6 +42,8 @@
                                 <div class="flex flex-col ml-3">
                                     <div class="font-semibold text-sm">
                                         <h1 x-text="messageSelected.user_name"></h1>
+                                        <h1 x-text="messageSelected.phone_number">
+
                                     </div>
                                 </div>
                                 <div class="ml-auto">
@@ -74,8 +76,7 @@
                                             <div class="flex flex-row items-center">
                                                 <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
                                                     <div x-text="messageSelected.message">
-
-                                                    </div>
+                                                 </div>
                                                 </div>
                                             </div>
                                         </div>
