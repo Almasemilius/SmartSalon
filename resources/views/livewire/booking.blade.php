@@ -70,7 +70,7 @@
           events: JSON.parse(data),
 
           expandRows: true,
-
+          allDaySlot: false,
           initialView: 'timeGridWeek',
           slotDuration: '01:00',
           slotMinTime: '08:00',

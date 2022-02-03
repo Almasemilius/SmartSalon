@@ -1,5 +1,5 @@
 <div>
-    <x-loading-indicator />
+<x-loading-indicator />
 
     <style>
         .swiper {
@@ -9,16 +9,17 @@
     <!-- component -->
     <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
     <div class="py-5 px-4">
+        
         <div class="w-full flex justify-center">
             <div class="w-full md:w-11/12 xl:w-10/12 bg-gradient-to-r from-yellow-600 to-yellow-900 md:py-2 md:px-8 px-5 xl:px-12 xl:py-3">
-                <div class="flex flex-wrap items-center md:flex-row flex-col-reverse">
-                    <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
-                        <div>
-                            <h1 role="heading" class="text-xl md:text-2xl lg:text-4xl xl:text-4xl text-white font-black leading-6 lg:leading-10 md:text-left text-center">{{$general->message}}</h1>
+                    <div class="flex flex-wrap items-center md:flex-row flex-col-reverse">
+                        <div class="md:w-2/3 w-full pb-6 md:pb-0 md:pr-6 flex-col md:block flex items-center justify-center md:pt-0 pt-4">
+                            <div>
+                                <h1 role="heading" class="text-xl md:text-2xl lg:text-4xl xl:text-4xl text-white font-black leading-6 lg:leading-10 md:text-left text-center">{{$general->message}}</h1>
+                            </div>
+                            <button onclick="location.href='{{route('booking')}}' " role="button" aria-label="Join the community" class="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-yellow-00 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none">Book Appointment</button>
                         </div>
-                        <button role="button" aria-label="Join the community" class="mt-5 lg:mt-8 py-3 lg:py-4 px-4 lg:px-8 bg-white font-bold text-yellow-00 rounded-lg text-sm lg:text-lg xl:text-xl hover:bg-opacity-90  focus:ring-2 focus:ring-offset-2 focus:ring-white focus:outline-none">Book Appointment</button>
                     </div>
-                </div>
             </div>
         </div>
     </div>
@@ -35,6 +36,7 @@
         </div>
         <!-- If we need pagination -->
         <div class="swiper-pagination bg-yellow-800"></div>
+        
 
     </div>
 
