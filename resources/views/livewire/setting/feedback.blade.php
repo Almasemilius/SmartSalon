@@ -1,4 +1,6 @@
 <div class="flex h-screen">
+    <x-loading-indicator />
+
     @include('layouts.sidebar')
     <div class="z-0 bg-brownish w-full md:w-5/6">
         <div class="w-full lg:w-10/12 px-4 mx-auto">
@@ -72,7 +74,7 @@
                                             <div class="flex flex-row items-center">
                                                 <div class="relative ml-3 text-sm bg-white py-2 px-4 shadow rounded-xl">
                                                     <div x-text="messageSelected.message">
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div>

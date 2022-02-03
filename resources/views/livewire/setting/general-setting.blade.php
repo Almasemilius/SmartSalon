@@ -1,10 +1,11 @@
 <div class="flex">
+    <x-loading-indicator />
+
     @include('layouts.sidebar')
     <!-- component -->
     <div class="z-0 bg-brownish w-full md:w-5/6">
         <div class="w-full lg:w-10/12 px-4 mx-auto">
-            <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-b">
+            <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-b">
                 <div class="rounded-t bg-white mb-0 px-6 py-3 border-b">
                     <div class="text-center flex justify-between">
                         <h6 class="text-blueGray-700 text-xl font-bold">
@@ -22,9 +23,7 @@
                                     <label class="block capitalize text-xs font-bold mb-2" for="name">
                                         name
                                     </label>
-                                    <input wire:model.defer="general.name" type="text"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        id="name">
+                                    <input wire:model.defer="general.name" type="text" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="name">
                                 </div>
                             </div>
                             <div class="w-full px-4">
@@ -32,8 +31,7 @@
                                     <label class="block capitalize text-xs font-bold mb-2" for="message">
                                         Welcome Message
                                     </label>
-                                    <textarea  wire:model.defer="general.message" id="message" type="textarea"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"></textarea>
+                                    <textarea wire:model.defer="general.message" id="message" type="textarea" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"></textarea>
                                 </div>
                             </div>
 
@@ -42,9 +40,7 @@
                                     <label class="block capitalize text-xs font-bold mb-2" for="name">
                                         Phone number
                                     </label>
-                                    <input wire:model.defer="general.phone_number" type="text"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        id="name">
+                                    <input wire:model.defer="general.phone_number" type="text" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="name">
                                 </div>
                             </div>
                             <div class="w-full lg:w-6/12 px-4">
@@ -52,9 +48,7 @@
                                     <label class="block capitalize text-xs font-bold mb-2" for="name">
                                         Facebook Page
                                     </label>
-                                    <input wire:model.defer="general.facebook" type="text"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        id="name">
+                                    <input wire:model.defer="general.facebook" type="text" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="name">
                                 </div>
                             </div>
                             <div class="w-full lg:w-6/12 px-4">
@@ -62,21 +56,18 @@
                                     <label class="block capitalize text-xs font-bold mb-2" for="name">
                                         Twitter Account
                                     </label>
-                                    <input wire:model.defer="general.twitter" type="text"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        id="name">
+                                    <input wire:model.defer="general.twitter" type="text" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="name">
                                 </div>
-                            </div><div class="w-full lg:w-6/12 px-4">
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
                                 <div class="relative w-full mb-3">
                                     <label class="block capitalize text-xs font-bold mb-2" for="name">
                                         Instagram Account
                                     </label>
-                                    <input wire:model.defer="general.instagram" type="text"
-                                        class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        id="name">
+                                    <input wire:model.defer="general.instagram" type="text" class="border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="name">
                                 </div>
                             </div>
-                           
+
                             <div class="w-full">
                                 <label for="">&nbsp</label>
                                 <div class="mb-3  text-center">

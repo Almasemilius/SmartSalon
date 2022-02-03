@@ -1,4 +1,7 @@
 <div x-data="{open:false,info: @entangle('bookingData')}" @openmodal.window="info=$event.detail,open=true" class="relative">
+
+<x-loading-indicator />
+
   <div x-show="open" class="absolute flex justify-center h-screen items-center w-full z-10 bg-gray-200 antialiased">
     <div class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl">
       <div class="flex flex-row justify-between p-6 bg-white border-b border-gray-200 rounded-tl-lg rounded-tr-lg">
@@ -54,6 +57,7 @@
   </div>
 
 
+
   @push('scripts')
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js'></script>
   <script>
@@ -65,11 +69,11 @@
         var calendar = new FullCalendar.Calendar(calendarEl, {
           events: JSON.parse(data),
 
-          height: "auto",
+          expandRows: true,
 
           initialView: 'timeGridWeek',
           slotDuration: '01:00',
-          slotMinTime: '08:00', 
+          slotMinTime: '08:00',
           slotMaxTime: '18:00',
           headerToolbar: {
             left: 'prev,next today',
@@ -95,7 +99,6 @@
         calendar.render();
       });
     });
-    calendar.render();
   </script>
   <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
   @endpush

@@ -1,4 +1,6 @@
 <div class="flex">
+    <x-loading-indicator />
+
     @include('layouts.sidebar')
     <!-- component -->
     <div class="z-0 bg-brownish w-full md:w-5/6">

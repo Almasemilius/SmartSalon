@@ -1,4 +1,6 @@
 <div>
+    <x-loading-indicator />
+
     <!-- component -->
     <section id="contact" class="relative w-full text-gray-600">
         <h1 class="text-4xl ml-28 font-bold tracking-wide">

@@ -1,4 +1,6 @@
 <div class="flex h-screen">
+	<x-loading-indicator />
+
 	@include('layouts.sidebar')
 	<!-- component -->
 	<div class="z-0 bg-brownish w-full md:w-5/6">
@@ -18,69 +20,69 @@
 						<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
 							<div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
 								@if (count($pendingBookings))
-									<table class="min-w-full leading-normal bg-white">
-										<thead>
-											<tr>
-												<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-													Name
-												</th>
-												<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-													Phone Number
-												</th>
-												<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-													Booking Day
-												</th>
-												<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-													Style
-												</th>
-												<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-													Status
-												</th>
-											</tr>
-										</thead>
-										<tbody>
-											@foreach($pendingBookings as $pendingBooking)
-											<tr>
-												<td class="px-5 py-5 border-b border-gray-200 bg-gray-50 text-sm">
-													<div class="flex items-center">
-														<p class="text-gray-900 whitespace-no-wrap">
-															{{ $pendingBooking->name}}
-														</p>
-													</div>
-												</td>
-												<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													<p class="text-gray-900 whitespace-no-wrap">{{ $pendingBooking->phone_number}}</p>
-												</td>
-												<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+								<table class="min-w-full leading-normal bg-white">
+									<thead>
+										<tr>
+											<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+												Name
+											</th>
+											<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+												Phone Number
+											</th>
+											<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+												Booking Day
+											</th>
+											<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+												Style
+											</th>
+											<th class="px-5 py-3 border-b-2 border-gray-200 bg-white text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+												Status
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										@foreach($pendingBookings as $pendingBooking)
+										<tr>
+											<td class="px-5 py-5 border-b border-gray-200 bg-gray-50 text-sm">
+												<div class="flex items-center">
 													<p class="text-gray-900 whitespace-no-wrap">
-														{{ $pendingBooking->booking_day}}
+														{{ $pendingBooking->name}}
 													</p>
-												</td>
-												<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													<p class="text-gray-900 whitespace-no-wrap">
-														{{ $pendingBooking->style->name}}
-													</p>
-												</td>
-												<td class="flex gap-2 px-5 py-5 border-b border-gray-200 bg-white text-sm">
-													<div class="btn-success">
-														<button wire:click="acceptBooking({{$pendingBooking->id}})">Accept</button>
-													</div>
-													<div class="btn-danger">
-														<button wire:click="deletePendingRequest({{$pendingBooking->id}})">Decline</button>
-													</div>
-												</td>
-											</tr>
-											@endforeach
-										</tbody>
-									</table>
-							
-									<div class="">
-										{{ $pendingBookings->links() }}
-									</div>
+												</div>
+											</td>
+											<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+												<p class="text-gray-900 whitespace-no-wrap">{{ $pendingBooking->phone_number}}</p>
+											</td>
+											<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+												<p class="text-gray-900 whitespace-no-wrap">
+													{{ $pendingBooking->booking_day}}
+												</p>
+											</td>
+											<td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+												<p class="text-gray-900 whitespace-no-wrap">
+													{{ $pendingBooking->style->name}}
+												</p>
+											</td>
+											<td class="flex gap-2 px-5 py-5 border-b border-gray-200 bg-white text-sm">
+												<div class="btn-success">
+													<button wire:click="acceptBooking({{$pendingBooking->id}})">Accept</button>
+												</div>
+												<div class="btn-danger">
+													<button wire:click="deletePendingRequest({{$pendingBooking->id}})">Decline</button>
+												</div>
+											</td>
+										</tr>
+										@endforeach
+									</tbody>
+								</table>
+
+								<div class="">
+									{{ $pendingBookings->links() }}
+								</div>
 								@else
-									<div class="p-4 text-gray-600 flex justify-center bg-gray-50">
-										No pending Booking Requests at the moment!
-									</div>
+								<div class="p-4 text-gray-600 flex justify-center bg-gray-50">
+									No pending Booking Requests at the moment!
+								</div>
 								@endif
 							</div>
 						</div>
