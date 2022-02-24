@@ -324,7 +324,7 @@
 
     {{-- Content --}}
     <div class="py-5 md:py-24">
-        <div class="mt-24 md:mt-0">
+        <div class="mt-24 mb-16 md:mb-0 md:mt-0">
         {{ $slot }}
         </div>
     </div>
