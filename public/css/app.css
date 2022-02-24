@@ -1140,14 +1140,14 @@ select {
 .z-50 {
 	z-index: 50;
 }
+.z-20 {
+	z-index: 20;
+}
 .z-10 {
 	z-index: 10;
 }
 .z-40 {
 	z-index: 40;
-}
-.z-20 {
-	z-index: 20;
 }
 .col-span-6 {
 	grid-column: span 6 / span 6;
@@ -1369,14 +1369,14 @@ select {
 .h-20 {
 	height: 5rem;
 }
+.h-screen {
+	height: 100vh;
+}
 .h-32 {
 	height: 8rem;
 }
 .h-full {
 	height: 100%;
-}
-.h-screen {
-	height: 100vh;
 }
 .h-1\/5 {
 	height: 20%;
@@ -1881,6 +1881,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+.bg-black {
+	--tw-bg-opacity: 1;
+	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
+}
 .bg-pinkish {
 	--tw-bg-opacity: 1;
 	background-color: rgba(254, 213, 219, var(--tw-bg-opacity));
@@ -1908,10 +1912,6 @@ select {
 .bg-gray-600 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(75, 85, 99, var(--tw-bg-opacity));
-}
-.bg-black {
-	--tw-bg-opacity: 1;
-	background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
@@ -2310,14 +2310,11 @@ select {
 .opacity-50 {
 	opacity: 0.5;
 }
-.opacity-90 {
-	opacity: 0.9;
-}
-.opacity-70 {
-	opacity: 0.7;
-}
 .opacity-80 {
 	opacity: 0.8;
+}
+.opacity-90 {
+	opacity: 0.9;
 }
 .shadow-sm {
 	--tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);

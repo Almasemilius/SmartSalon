@@ -12,6 +12,7 @@
 
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-brownish  min-h-full">

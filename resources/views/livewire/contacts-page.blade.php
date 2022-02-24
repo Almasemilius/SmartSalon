@@ -53,15 +53,15 @@
                 <div class="pt-1">
                     <div class="flex flex-col mb-1">
                         <label for="user_name">Name</label>
-                        <input wire:model="feedback.user_name" type="text" id="user_name" class="input" autocomplete="off">
+                        <input wire:model.defer="feedback.user_name" type="text" id="user_name" class="input" autocomplete="off">
                     </div>
                     <div class="flex flex-col mb-1">
                         <label for="phone_number">Phone Number</label>
-                        <input wire:model="feedback.phone_number" type="text" id="phone_number" class="input" autocomplete="off">
+                        <input wire:model.defer="feedback.phone_number" type="text" id="phone_number" class="input" autocomplete="off">
                     </div>
                     <div class="flex flex-col mb-1">
                         <label for="message">Message</label>
-                        <textarea wire:model="feedback.message" rows="4" id="message" class="input"></textarea>
+                        <textarea wire:model.defer="feedback.message" rows="4" id="message" class="input"></textarea>
                     </div>
                 </div>
                 <div class="w-full flex justify-center pt-2">
