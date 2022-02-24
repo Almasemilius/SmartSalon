@@ -290,6 +290,8 @@
                     </svg>
                 </button>
             </div>
+
+            <!-- Top Nv for large screens -->
             <ul class="hidden md:flex flex-1 justify-end items-center uppercase gap-10">
                 <a href="{{route('booking')}}" class="flex cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -322,7 +324,9 @@
 
     {{-- Content --}}
     <div class="py-5 md:py-24">
+        <div class="mt-24 md:mt-0">
         {{ $slot }}
+        </div>
     </div>
     {{-- Content Ends --}}
 
