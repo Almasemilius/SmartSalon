@@ -11,12 +11,15 @@ class Booking extends Component
 {
     public $bookings = '';
     public $styles;
-    public $styleId;
     public $stylePrice;
     public $bookingData;
-    public $name;
-    public $phoneNumber;
     public PendingBooking $pendingBooking;
+
+    protected $rules = [
+        'pendingBooking.name' => 'required',
+        'pendingBooking.phone_number' => 'required',
+        'pendingBooking.style_id' => 'required',
+    ];
 
     public function mount()
     {
@@ -38,14 +41,10 @@ class Booking extends Component
         $newBookingData = str_replace("T", " ", $this->bookingData['dateStr']);
         $newBookingData = substr($newBookingData, 0, 19);
         $this->pendingBooking->booking_day = $newBookingData;
-        $this->pendingBooking->style_id = $this->styleId;
-        $this->pendingBooking->name = $this->name;
-        $this->pendingBooking->phone_number = $this->phoneNumber;
         $this->pendingBooking->save();
-
         $this->pendingBooking = new PendingBooking();
+        $this->stylePrice = '';
 
-        // dd($this->pendingBooking);
     }
 
     public function addbooking($booking)
@@ -73,8 +72,8 @@ class Booking extends Component
     public function render()
     {
 
-        if ($this->styleId) {
-            $this->stylePrice = Style::find($this->styleId)->price;
+        if ($this->pendingBooking->style_id) {
+            $this->stylePrice = Style::find($this->pendingBooking->style_id)->price;
         }
         $this->styles = Style::all();
 

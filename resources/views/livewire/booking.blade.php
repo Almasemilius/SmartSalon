@@ -1,6 +1,7 @@
-<div x-data="{open:false,info: @entangle('bookingData')}" @openmodal.window="info=$event.detail,open=true" class="relative">
 
-<x-loading-indicator />
+<div x-cloak x-data="{open:false,info: @entangle('bookingData')}" @openmodal.window="info=$event.detail,open=true" class="relative">
+
+  <x-loading-indicator />
 
   <div x-show="open" class="absolute flex justify-center h-screen items-center w-full z-10 bg-gray-200 antialiased">
     <div class="flex flex-col w-11/12 sm:w-5/6 lg:w-1/2 max-w-2xl mx-auto rounded-lg border border-gray-300 shadow-xl">
@@ -16,17 +17,17 @@
         <div class="flex w-full">
           <div class="w-full sm:w-1/2 pr-2">
             <label for="name">Full Name</label>
-            <input wire:model.defer="name" type="text" name="name" id="name" placeholder="Aggie" class="input w-full" autocomplete="off" required>
+            <input wire:model.defer="pendingBooking.name" type="text" name="name" id="name" placeholder="Aggie" class="input w-full" autocomplete="off" required>
           </div>
           <div class="w-full sm:w-1/2 pl-2">
             <label for="phone_number">Phone Number</label>
-            <input wire:model.defer="phoneNumber" type="text" name="phone_number" placeholder="0712345678" class="input w-full" id="phone_number" autocomplete="off" required>
+            <input wire:model.defer="pendingBooking.phone_number" type="text" name="phone_number" placeholder="0712345678" class="input w-full" id="phone_number" autocomplete="off" required>
           </div>
         </div>
         <div class="flex w-full">
           <div class="w-full sm:w-1/2 pr-2">
             <label for="style">Style</label>
-            <select wire:model="styleId" type="text" name="style" id="style" class="input w-full" required>
+            <select wire:model="pendingBooking.style_id" type="text" name="style" id="style" class="input w-full" required>
               <option value=""></option>
               @foreach($styles as $style)
               <option value="{{$style->id}}">{{$style->name}}</option>
@@ -61,6 +62,15 @@
   @push('scripts')
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js'></script>
   <script>
+    $(document).ready(function() {
+      $('.bookBtn').click(function(e) {
+        Swal.fire(
+          'Successfully Booked',
+          'That thing is still around?',
+          'success'
+        )
+      })
+    })
     document.addEventListener('livewire:load', function() {
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');

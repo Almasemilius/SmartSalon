@@ -37,7 +37,7 @@ class PendingBook extends Component
     }
     public function render()
     {
-        $pendingBookings = PendingBooking::paginate(10);
+        $pendingBookings = PendingBooking::latest()->paginate(10);
        
         return view('livewire.setting.pending-book',compact('pendingBookings'));
     }
