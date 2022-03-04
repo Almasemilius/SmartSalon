@@ -18,6 +18,11 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 </head>
 
 <body class="font-sans antialiased border m-0 p-0 overflow-x-hidden">
@@ -206,9 +211,10 @@
         </main>
     </div>
 
-    @stack('modals')
-
     @livewireScripts
+    @stack('modals')
+    @stack('scripts')
+
 </body>
 
 </html>

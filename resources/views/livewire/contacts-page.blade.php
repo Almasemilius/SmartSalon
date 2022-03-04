@@ -3,14 +3,15 @@
 
     <!-- component -->
     <section id="contact" class="relative w-full text-gray-600">
-        <h1 class="text-4xl ml-28 font-bold tracking-wide">
-            Contact Us
-        </h1>
-        <div class="flex justify-center mt-1 md:hidden">
-            <hr class="border-1 border-gray-500 w-1/2 ">
+        <div class="hidden md:block">
+            <h1 class="text-4xl ml-28 font-bold tracking-wide">
+                Contact Us
+            </h1>
+            <div class="flex justify-center mt-1 md:hidden">
+                <hr class="border-1 border-gray-500 w-1/2 ">
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pinkish h-32 w-full"></div>
         </div>
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-pinkish h-32 w-full"></div>
-
         <!-- wrapper -->
         <div class="relative px-5 lg:px-20 flex flex-col md:flex-row items-center justify-center">
 

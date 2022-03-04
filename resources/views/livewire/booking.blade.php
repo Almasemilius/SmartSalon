@@ -1,4 +1,3 @@
-
 <div x-cloak x-data="{open:false,info: @entangle('bookingData')}" @openmodal.window="info=$event.detail,open=true" class="relative">
 
   <x-loading-indicator />
@@ -44,7 +43,7 @@
       </div>
       <div class="flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg">
         <button @click="open=false" class="font-semibold text-gray-600">Cancel</button>
-        <button wire:click="addPendingRequest" @click="open=false" class="px-4 py-2 text-white font-semibold bg-blue-500 rounded">
+        <button @click="open=false" class="px-4 py-2 text-white font-semibold bg-blue-500 rounded bookBtn">
           Book
         </button>
       </div>
@@ -64,9 +63,10 @@
   <script>
     $(document).ready(function() {
       $('.bookBtn').click(function(e) {
+        @this.addPendingRequest();
         Swal.fire(
           'Successfully Booked',
-          'That thing is still around?',
+          'You need to make an advance payment of atleast 10K to secure your booking through +255789 276 894 🙄',
           'success'
         )
       })

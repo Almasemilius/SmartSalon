@@ -25,6 +25,7 @@ class Booking extends Component
     {
         $this->pendingBooking = new PendingBooking();
     }
+
     public function getbooking()
     {
         $bookings = Book::select('id', 'style', 'book_time')->get();
