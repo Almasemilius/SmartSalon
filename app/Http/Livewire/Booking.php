@@ -45,6 +45,7 @@ class Booking extends Component
         $this->pendingBooking->save();
         $this->pendingBooking = new PendingBooking();
         $this->stylePrice = '';
+        $this->emit('requestAdded');
 
     }
 

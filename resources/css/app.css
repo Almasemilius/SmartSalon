@@ -3,8 +3,8 @@
 @import 'tailwindcss/utilities';
 
 .btn-danger{
-    @apply text-red-500 border p-1 border-red-500 hover:text-white hover:bg-red-600;
+    @apply text-red-500 border p-1 border-red-500 hover:text-white hover:bg-red-600 shadow-lg rounded-sm;
 }
 .btn-success{
-    @apply text-green-500 border p-1 border-green-500 hover:text-white hover:bg-green-600;
+    @apply text-green-500 border p-1 border-green-500 hover:text-white hover:bg-green-600 shadow-lg rounded-sm;
 }

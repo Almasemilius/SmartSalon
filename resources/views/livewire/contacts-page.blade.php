@@ -76,4 +76,11 @@
             </form>
         </div>
     </section>
+    @push('scripts')
+        <script>
+            Livewire.on('feedbackAdded', name =>{
+                swal("Feedback sent" , "Thank you "+name+" for your feedback. we promise to work on that", "success");
+            })
+        </script>
+    @endpush
 </div>

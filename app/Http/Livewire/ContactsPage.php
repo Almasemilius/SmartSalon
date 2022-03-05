@@ -22,6 +22,7 @@ class ContactsPage extends Component
     {
         $this->validate();
         $this->feedback->save();
+        $this->emit('feedbackAdded',$this->feedback->user_name);
         $this->feedback = new Feedback();
     }
     public function render()

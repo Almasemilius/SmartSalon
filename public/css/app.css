@@ -1405,6 +1405,9 @@ select {
 .h-11 {
 	height: 2.75rem;
 }
+.h-72 {
+	height: 18rem;
+}
 .min-h-screen {
 	min-height: 100vh;
 }
@@ -2427,12 +2430,15 @@ select {
 	transition-timing-function: linear;
 }
 .btn-danger {
+	border-radius: 0.125rem;
 	border-width: 1px;
 	--tw-border-opacity: 1;
 	border-color: rgba(239, 68, 68, var(--tw-border-opacity));
 	padding: 0.25rem;
 	--tw-text-opacity: 1;
 	color: rgba(239, 68, 68, var(--tw-text-opacity));
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .btn-danger:hover {
 	--tw-bg-opacity: 1;
@@ -2441,12 +2447,15 @@ select {
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .btn-success {
+	border-radius: 0.125rem;
 	border-width: 1px;
 	--tw-border-opacity: 1;
 	border-color: rgba(16, 185, 129, var(--tw-border-opacity));
 	padding: 0.25rem;
 	--tw-text-opacity: 1;
 	color: rgba(16, 185, 129, var(--tw-text-opacity));
+	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .btn-success:hover {
 	--tw-bg-opacity: 1;
@@ -3073,10 +3082,6 @@ select {
 
 	.lg\:hidden {
 		display: none;
-	}
-
-	.lg\:h-auto {
-		height: auto;
 	}
 
 	.lg\:h-60 {

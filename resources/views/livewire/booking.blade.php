@@ -43,7 +43,7 @@
       </div>
       <div class="flex flex-row items-center justify-between p-5 bg-white border-t border-gray-200 rounded-bl-lg rounded-br-lg">
         <button @click="open=false" class="font-semibold text-gray-600">Cancel</button>
-        <button @click="open=false" class="px-4 py-2 text-white font-semibold bg-blue-500 rounded bookBtn">
+        <button @click="open=false" wire:click="addPendingRequest" class="px-4 py-2 text-white font-semibold bg-blue-500 rounded">
           Book
         </button>
       </div>
@@ -61,15 +61,12 @@
   @push('scripts')
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js'></script>
   <script>
-    $(document).ready(function() {
-      $('.bookBtn').click(function(e) {
-        @this.addPendingRequest();
-        Swal.fire(
-          'Successfully Booked',
-          'You need to make an advance payment of atleast 10K to secure your booking through +255789 276 894 🙄',
-          'success'
-        )
-      })
+    Livewire.on('requestAdded', function() {
+      Swal(
+        'Successfully Booked',
+        'You need to make an advance payment of atleast 10K to secure your booking through +255789 276 894 🙄',
+        'success'
+      )
     })
     document.addEventListener('livewire:load', function() {
       document.addEventListener('DOMContentLoaded', function() {

@@ -66,11 +66,11 @@
 												</td>
 												<td class="flex gap-2 px-5 py-5 border-b border-gray-200 bg-white text-sm">
 													<div class="btn-success">
-														<button wire:click="$emit('postAdded',{{$pendingBooking->id}})" class="acceptBtn">Accept</button>
+														<button wire:click="$emit('addBooking',{{$pendingBooking->id}})" class="acceptBtn">Accept</button>
 														<!-- <button wire:click="acceptBooking({{$pendingBooking->id}})">Accept</button> -->
 													</div>
 													<div class="btn-danger">
-														<button wire:click="deletePendingRequest({{$pendingBooking->id}})" class="declineBtn">Decline</button>
+														<button wire:click="$emit('requestDelete',{{$pendingBooking->id}})" class="declineBtn">Decline</button>
 													</div>
 												</td>
 											</tr>
@@ -95,15 +95,48 @@
 
 			</div>
 		</div>
-	@push('scripts')
+		@push('scripts')
 		<script>
-			Livewire.on('postAdded', bookingId => {
-				$(document).ready(function() {
-					$('.acceptBtn').click(function(e) {
-						swal.fire("Good job!", "You clicked the button!", "success");
+			// Delete Request Alert
+			Livewire.on('requestDelete', bookingId => {
+				swal({
+						title: "Are you sure?",
+						text: "Once Declined, you will not be able to recover this request!",
+						icon: "warning",
+						buttons: true,
+						dangerMode: true,
+					})
+					.then((willDelete) => {
+						if (willDelete) {
+							@this.declineBooking(bookingId);
+							swal("Request has been Deleted", {
+								icon: "success",
+							});
+						} else {
+							swal("Operation Cancelled");
+						}
 					});
-				});
-		})
+			})
+
+			// Accept Request Alert
+			Livewire.on('addBooking', bookingId => {
+				swal({
+						title: "Adding Request to Booking?",
+						text: "This action will accept the request!",
+						icon: "warning",
+						buttons: true,
+					})
+					.then((willDelete) => {
+						if (willDelete) {
+							@this.acceptBooking(bookingId);
+							swal("Request has been Accepted", {
+								icon: "success",
+							});
+						} else {
+							swal("Operation Cancelled");
+						}
+					});
+			})
 		</script>
 		@endpush
 	</div>

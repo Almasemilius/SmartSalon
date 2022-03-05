@@ -9,7 +9,7 @@ class Feedback extends Component
 {
     public function render()
     {
-        $feedbacks = ModelsFeedback::paginate(10);
+        $feedbacks = ModelsFeedback::latest()->paginate(5);
         return view('livewire.setting.feedback',compact('feedbacks'));
     }
 }

@@ -7,7 +7,7 @@
             <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-100 border-b">
 
                 <!-- component -->
-                <div x-data="{messageSelected : null}" class="flex flex-row h-screen antialiased text-gray-800">
+                <div x-data="{messageSelected : null}" class="flex flex-row h-92 antialiased text-gray-800">
                     <div class="flex flex-row w-1/3 flex-shrink-0 bg-gray-100 p-4">
                         <div class="flex flex-col w-full h-full pl-4 pr-4 py-4 -mr-4">
                             <div class="flex flex-row items-center">
@@ -16,7 +16,7 @@
                                 </div>
                             </div>
                             <div class="mt-2">
-                                <div class="flex flex-col -mx-4">
+                                <div class="flex flex-col -mx-4 h-92 overflow-y-scroll">
                                     @foreach ($feedbacks as $feedback)
                                     <div @click='messageSelected = @json($feedback)' class="relative cursor-pointer flex flex-row items-center p-4 bg-gradient-to-r from-pinkish to-transparent border-l-2 border-yellow-800">
                                         <div class="absolute text-xs text-gray-500 right-0 top-0 mr-4 mt-3">{{$feedback->created_at->diffForHumans()}}</div>
@@ -32,6 +32,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                     <template x-if="messageSelected">
                         <div class="flex flex-col h-full w-full bg-white px-4 py-6">
