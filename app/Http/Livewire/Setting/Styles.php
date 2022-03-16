@@ -12,6 +12,7 @@ class Styles extends Component
     use WithFileUploads;
     public Style $style;
     public $styleImage;
+    public $editMode = false;
     
     protected $rules = [
         'style.name'=> 'required',
@@ -33,6 +34,11 @@ class Styles extends Component
         $this->style->save();
         $this->style = new Style();        
 
+    }
+    public function editStyle(Style $style)
+    {
+        $this->style = $style;
+        $this->editMode = true;
     }
     public function render()
     {

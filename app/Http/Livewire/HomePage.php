@@ -12,6 +12,7 @@ class HomePage extends Component
     {
         $styles = Style::all();
         $general = General::first();
+        // dd($general);
         return view('livewire.home-page',compact('styles','general'))->layout('layouts.default');
     }
 }

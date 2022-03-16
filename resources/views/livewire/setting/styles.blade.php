@@ -57,12 +57,21 @@
                                     </label>
                                 </div>
                             </div>
+                            @if($editMode == false)
                             <div class="lg:w-6/12 px-4">
                                 <label for="">&nbsp</label>
                                 <div class="relative mb-3  text-center">
                                     <button wire:click.prevent="addStyle" class="w-64 shadow-lg bg-brownish rounded-md px-4 py-6">Add Style</button>
                                 </div>
                             </div>
+                            @else
+                            <div class="lg:w-6/12 px-4">
+                                <label for="">&nbsp</label>
+                                <div class="relative mb-3  text-center">
+                                    <button wire:click.prevent="addStyle" class="w-64 shadow-lg bg-brownish rounded-md px-4 py-6">Update Style</button>
+                                </div>
+                            </div>
+                            @endif
                         </div>
                         {{-- Our Services Ends --}}
                         <hr class=" mt-6 border-b-1">
@@ -79,7 +88,7 @@
                                         <img alt="..." src="{{$style->stylePicture}}" class="h-24 w-24 rounded  mx-auto" />
                                     </div>
                                     <div class="col-span-2 sm:col-span-4 xl:col-span-4">
-                                        <h3 class="font-semibold text-black">{{$style->name}}</h3>
+                                        <button wire:click.prevent="editStyle({{$style->id}})" class="font-semibold text-black">{{$style->name}}</button>
                                         <p>
                                             {{$style->info}}
                                         </p>
