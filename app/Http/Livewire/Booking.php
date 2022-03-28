@@ -84,7 +84,7 @@ class Booking extends Component
 
             $booking["title"] = $booking->style->name;
             $booking["start"] = $booking->booking_day;
-            $booking["end"] =  date('Y-m-d H:i:s',strtotime('+3 hour',strtotime($booking->booking_day)));;
+            $booking["end"] =  date('Y-m-d H:i:s',strtotime('+3 hour',strtotime($booking->booking_day)));
             return $booking;
         });
         $this->bookings = json_encode($bookingInfo);

@@ -32,6 +32,8 @@ class Styles extends Component
 
 
         $this->style->save();
+        $this->editMode = false;
+        
         $this->style = new Style();        
 
     }
