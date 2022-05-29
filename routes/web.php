@@ -10,6 +10,7 @@ use App\Http\Livewire\Setting\PendingBook;
 use App\Http\Livewire\Setting\Feedback;
 use App\Http\Livewire\Setting\Styles;
 use App\Http\Livewire\StyleList;
+use App\Http\Livewire\Welcome;
 use App\Providers\RouteServiceProvider;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',HomePage::class)->name('home');
+Route::get('/welcome',Welcome::class)->name('welcome');
 Route::get('/style-list',StyleList::class)->name('style.list');
 Route::get('/imageTest',[TestingController::class,'imageTest']);
 Route::get('/booking',Booking::class)->name('booking');
